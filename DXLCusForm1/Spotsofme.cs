@@ -53,7 +53,7 @@ namespace DXLog.net
             InitializeLayout();
         }
 
-        public override void InitializeLayout() // comment
+        public override void InitializeLayout() 
         {
             base.InitializeLayout(_windowFont);
 
