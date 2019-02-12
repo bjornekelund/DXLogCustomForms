@@ -31,3 +31,6 @@ in a single DLL but they must
 
 * Have different names (of the KForm)
 * Have different FormsID (change both in the CusFormID method for the class and in the Forms property)
+
+For more information see www.sm7iun.se
+
