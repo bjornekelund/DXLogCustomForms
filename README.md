@@ -1,4 +1,4 @@
-# DXLogCustomForms
+# DXLog.net Custom Forms
 DXLog.net offers a unique customization ability in that you can design your own "subwindows" 
 also referred to as Forms. A Form can contain information, data or metrics that you do not 
 get from one of the standard DXLog.net windows. On the DXLog.net web site you can download 
