@@ -10,14 +10,14 @@ to *DXLog.net's* installation folder.
 Contrary to *DXLog.net* script files, this means you have to compile your code into an executable
 binary.
 
-Some (hard earned) advice for designing custom Forms in DXLog.net:
+Some (hard earned) advice for designing custom Forms in *DXLog.net*:
 
 To write, modify and compile custom Foms you need to install *Visual Studio*. The "*Community*" version
 is free for personal use. The example code should be opened through its solutions file (.sln).
 If you can not see the code, right click on the Form and select "view code"
 
-Just as with the scripts, you need to add proper references to relevant parts of the DXLog.net
-executables such as *DXLog.net.exe*, *DXLogDAL.dll* etc. Without this, *Visual Studio Intellisense*
+Just as with the scripts, you need to add proper references to relevant parts of the *DXLog.net*
+binaries such as *DXLog.net.exe*, *DXLogDAL.dll* etc. Without this, *Visual Studio Intellisense*
 will complain about e.g. variable names not being available and you will not be able to build.
 
 Make sure *Visual Studio* is set up to build for x86. (Click on the selection arrow where it says
@@ -31,7 +31,7 @@ Start *DXLog.net* and find a new drop-down menu called "*Custom*" between "*Wind
 Use it to activate your new custom Form. You can contain as many custom Forms as you like
 in a single DLL but they must
 
-* Have different names (of the KForm)
-* Have different FormsID (change both in the CusFormID method for the class and in the Forms property)
+* Have different names (of the *KForm*)
+* Have different FormsID (change both in the *CusFormID* method for the class and in the *Forms* property)
 
 For more information see www.sm7iun.se
