@@ -29,9 +29,9 @@ settings.) to the *CustomForms* folder.
 
 Start *DXLog.net* and find a new drop-down menu called "*Custom*" between "*Windows*" and "*Help*".  
 Use it to activate your new custom Form. You can contain as many custom Forms as you like
-in a single DLL but they must
+in a single DLL but they all must
 
-* Have different names (of the *KForm*)
+* Have different names (i.e. the name of the *KForm* object)
 * Have different FormsID (change both in the *CusFormID* method for the class and in the *Forms* property)
 
 For more information see www.sm7iun.se
