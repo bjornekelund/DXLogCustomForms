@@ -24,7 +24,7 @@ namespace DXLog.net
         
 
         private Font _windowFont = new Font("Courier New", 10, FontStyle.Regular);
-        private static readonly int Shownspots = 7;
+        private static readonly int Shownspots = 8;
         private DXCLine[] _spotLines = new DXCLine[Shownspots];
 
         private ContestData _cdata = null;
@@ -97,6 +97,7 @@ namespace DXLog.net
                 sb.AppendLine(String.Format("{0,-10} on {1:0.0}", dXCLine.Sender, dXCLine.Freq));
 
                 lbInfo.Text = sb.ToString();
+                //SpotsOfMe.ActiveForm.Text = sb.ToString();
             }
         }
     }

@@ -76,12 +76,12 @@ namespace DXLog.net
 
             int focusedRadio = frmMain.ContestDataProvider.FocusedRadio;
             int operatingMode = frmMain.ContestDataProvider.OPTechnique;
-            //int listenMode = frmMain.ListenStatusMode; // requires DXLog 2.3.18
+            int listenMode = frmMain.ListenStatusMode; // requires DXLog 2.3.18
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(String.Format("Focus has shifted. Focus is now Radio #{0}.", focusedRadio));
+            sb.AppendLine(String.Format("Focus shift. Focus is now Radio #{0}.", focusedRadio));
             sb.AppendLine(String.Format("Operating mode is {0}.", operatingModeName[operatingMode]));
-            //sb.AppendLine(String.Format("Audio mode is \"{0}\".", listenModeName[listenMode]));  // requires DXLog 2.3.18
+            sb.AppendLine(String.Format("Audio mode is \"{0}\".", listenModeName[listenMode]));  // requires DXLog 2.3.18
 
             lbInfo.Text = sb.ToString();
         }
