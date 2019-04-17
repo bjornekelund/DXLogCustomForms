@@ -44,11 +44,11 @@ namespace DXLog.net
             ColorSetTypes = new String[] { "Background", "Color", "Header back color", "Header color", "Footer back color", "Footer color", "Final score color", "Selection back color", "Selection color" };
             DefaultColors = new Color[] { Color.Turquoise, Color.Black, Color.Gray, Color.Black, Color.Silver, Color.Black, Color.Blue, Color.SteelBlue, Color.White };
             _cdata = cdata;
-            this.FormLayoutChangeEvent += new FormLayoutChange(handle_FormLayoutChangeEvent);
+            this.FormLayoutChangeEvent += new FormLayoutChange(Handle_FormLayoutChangeEvent);
 
         }
 
-        private void handle_FormLayoutChangeEvent()
+        private void Handle_FormLayoutChangeEvent()
         {
             InitializeLayout();
         }
@@ -66,12 +66,12 @@ namespace DXLog.net
             {
                 mainForm = (FrmMain)(this.ParentForm == null ? this.Owner : this.ParentForm);
                 if (mainForm != null)
-                    _cdata.SpotReceived += new ContestData.SpotReceivedDelegate(mainForm_NewClusterLine);
+                    _cdata.SpotReceived += new ContestData.SpotReceivedDelegate(MainForm_NewClusterLine);
             }
             base.Text = String.Format("Spots of {0}", _cdata.activeContest.dalHeader.Callsign);
         }
 
-        private void mainForm_NewClusterLine(DXCLine dXCLine)
+        private void MainForm_NewClusterLine(DXCLine dXCLine)
         {
             int i;
             StringBuilder sb = new StringBuilder();

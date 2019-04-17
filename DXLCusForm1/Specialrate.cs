@@ -41,10 +41,10 @@ namespace DXLog.net
             ColorSetTypes = new String[] { "Background", "Color", "Header back color", "Header color", "Footer back color", "Footer color", "Final score color", "Selection back color", "Selection color" };
             DefaultColors = new Color[] { Color.Turquoise, Color.Black, Color.Gray, Color.Black, Color.Silver, Color.Black, Color.Blue, Color.SteelBlue, Color.White };
             _cdata = cdata;
-            this.FormLayoutChangeEvent += new FormLayoutChange(handle_FormLayoutChangeEvent);
+            this.FormLayoutChangeEvent += new FormLayoutChange(Handle_FormLayoutChangeEvent);
         }
 
-        private void handle_FormLayoutChangeEvent()
+        private void Handle_FormLayoutChangeEvent()
         {
             InitializeLayout();
         }
@@ -64,12 +64,12 @@ namespace DXLog.net
                 {
                     cdata = mainForm.ContestDataProvider;
                     frmMain = mainForm;
-                    cdata.FocusedRadioChanged += new ContestData.FocusedRadioChange(mainForm_Focusshifted);
+                    cdata.FocusedRadioChanged += new ContestData.FocusedRadioChange(MainForm_Focusshifted);
                 }
             }
         }
 
-        private void mainForm_Focusshifted()
+        private void MainForm_Focusshifted()
         {
             string[] listenModeName = { "Radio 1", "Radio 2 toggle", "Radio 2", "Both radio" };
             string[] operatingModeName = { "Illegal", "SO1R", "SO2R", "SO2R Advanced", "SO2V" };
