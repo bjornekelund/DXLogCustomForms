@@ -84,17 +84,17 @@ namespace DXLog.net
                     if (_spotLines[i+1] != null)
                     {
                         _spotLines[i] = _spotLines[i + 1];
-                        sb.Append(String.Format("\"{0}\" by ", _spotLines[i].Callsign));
+                        sb.Append(String.Format("{0,-10} de ", _spotLines[i].Callsign));
                         //sb.AppendLine(String.Format("{0} on {1:0.0}kHz at {2}Z", _spotLines[i].Sender, _spotLines[i].Freq, _spotLines[i].UTC.ToString("HH:mm")));
-                        sb.AppendLine(String.Format("{0} on {1:0.0}kHz", _spotLines[i].Sender, _spotLines[i].Freq));
+                        sb.AppendLine(String.Format("{0,-10} on {1:0.0}", _spotLines[i].Sender, _spotLines[i].Freq));
                     }
                     else
                         sb.AppendLine("");
                 }
                 _spotLines[Shownspots - 1] = dXCLine;
-                sb.Append(String.Format("\"{0}\" by ", dXCLine.Callsign));
+                sb.Append(String.Format("{0,-10} de ", dXCLine.Callsign));
                 //sb.AppendLine(String.Format("{0} on {1:0.0}kHz at {2}Z", dXCLine.Sender, dXCLine.Freq, dXCLine.UTC.ToString("HH:mm")));
-                sb.AppendLine(String.Format("{0} on {1:0.0}kHz", dXCLine.Sender, dXCLine.Freq));
+                sb.AppendLine(String.Format("{0,-10} on {1:0.0}", dXCLine.Sender, dXCLine.Freq));
 
                 lbInfo.Text = sb.ToString();
             }
