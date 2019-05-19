@@ -68,6 +68,7 @@ namespace DXLog.net
                     frmMain = mainForm;
                     cdata.FocusedRadioChanged += new ContestData.FocusedRadioChange(MainForm_Focusshifted);
                 }
+                base.Text = "Radio status";
             }
         }
 
