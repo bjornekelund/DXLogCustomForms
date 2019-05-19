@@ -31,7 +31,7 @@ namespace DXLog.net
         // private EDI _edi = null;
         private FrmMain mainForm = null;
 
-        private delegate void newQsoSaved(DXQSO qso);
+        //private delegate void newQsoSaved(DXQSO qso);
 
         public SpotsOfMe()
         {
@@ -68,7 +68,8 @@ namespace DXLog.net
                 if (mainForm != null)
                     _cdata.SpotReceived += new ContestData.SpotReceivedDelegate(MainForm_NewClusterLine);
             }
-            base.Text = String.Format("Spots of {0}", _cdata.activeContest.dalHeader.Callsign);
+            //base.Text = String.Format("Spots of {0}", _cdata.activeContest.dalHeader.Callsign);
+            base.Text = "80m spots"; 
         }
 
         private void MainForm_NewClusterLine(DXCLine dXCLine)

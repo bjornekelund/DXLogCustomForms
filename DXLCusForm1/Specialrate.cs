@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
 using System.Drawing;
-using System.Linq;
+//using System.Linq;
 using System.Text;
-using System.Windows.Forms;
-using DXLog.net;
+//using System.Windows.Forms;
+//using DXLog.net;
 
 namespace DXLog.net
 {
@@ -15,9 +15,11 @@ namespace DXLog.net
         ContestData cdata;
         FrmMain frmMain;
 
+        //private delegate void ListenStatusChangeDelegate(int listenMode);
+
         public static String CusWinName
         {
-            get { return "Special rate"; }
+            get { return "Radio status"; }
         }
 
         public static Int32 CusFormID
@@ -85,5 +87,16 @@ namespace DXLog.net
 
             lbInfo.Text = sb.ToString();
         }
+
+        //public void ShowListenMode(int newMode)
+        //{
+        //    if (this.InvokeRequired)
+        //    {
+        //        ListenStatusChangeDelegate d = new ListenStatusChangeDelegate(ShowListenMode);
+        //        this.Invoke(d, newMode);
+        //        return;
+        //    }
+        //    MainForm_Focusshifted();
+        //}
     }
 }
