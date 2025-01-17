@@ -6,7 +6,7 @@ using System.Drawing;
 //using System.Linq;
 using System.Text;
 //using System.Windows.Forms;
-//using DXLog.net;
+using DXLog.net;
 
 namespace DXLog.net
 {
@@ -17,12 +17,12 @@ namespace DXLog.net
 
         //private delegate void ListenStatusChangeDelegate(int listenMode);
 
-        public static String CusWinName
+        public static string CusWinName
         {
             get { return "Radio status"; }
         }
 
-        public static Int32 CusFormID
+        public static int CusFormID
         {
             get { return 1001; }
         }
@@ -40,10 +40,10 @@ namespace DXLog.net
         public SpecialRate(ContestData cdata)
         {
             InitializeComponent();
-            ColorSetTypes = new String[] { "Background", "Color", "Header back color", "Header color", "Footer back color", "Footer color", "Final score color", "Selection back color", "Selection color" };
+            ColorSetTypes = new string[] { "Background", "Color", "Header back color", "Header color", "Footer back color", "Footer color", "Final score color", "Selection back color", "Selection color" };
             DefaultColors = new Color[] { Color.Turquoise, Color.Black, Color.Gray, Color.Black, Color.Silver, Color.Black, Color.Blue, Color.SteelBlue, Color.White };
             _cdata = cdata;
-            this.FormLayoutChangeEvent += new FormLayoutChange(Handle_FormLayoutChangeEvent);
+            FormLayoutChangeEvent += new FormLayoutChange(Handle_FormLayoutChangeEvent);
         }
 
         private void Handle_FormLayoutChangeEvent()
@@ -61,7 +61,7 @@ namespace DXLog.net
 
             if (mainForm == null)
             {
-                mainForm = (FrmMain)(this.ParentForm == null ? this.Owner : this.ParentForm);
+                mainForm = (FrmMain)(ParentForm == null ? Owner : ParentForm);
                 if (mainForm != null)
                 {
                     cdata = mainForm.ContestDataProvider;
@@ -74,16 +74,16 @@ namespace DXLog.net
 
         private void MainForm_Focusshifted()
         {
-            string[] listenModeName = { "Radio 1", "Radio 2 toggle", "Radio 2", "Both radio" };
+            //string[] listenModeName = { "Radio 1", "Radio 2 toggle", "Radio 2", "Both radio" };
 
             int focusedRadio = frmMain.ContestDataProvider.FocusedRadio;
             ContestData.Technique operatingMode = frmMain.ContestDataProvider.OPTechnique;
-            int listenMode = frmMain.ListenStatusMode; // requires DXLog 2.3.18
+            //int listenMode = frmMain.ListenStatusMode; // requires DXLog 2.3.18
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(String.Format("Focus shift. Focus is now Radio #{0}.", focusedRadio));
-            sb.AppendLine(String.Format("Operating mode is {0}.", operatingMode));
-            sb.AppendLine(String.Format("Audio mode is \"{0}\".", listenModeName[listenMode]));  // requires DXLog 2.3.18
+            sb.AppendLine(string.Format("Focus shift. Focus is now Radio #{0}.", focusedRadio));
+            sb.AppendLine(string.Format("Operating mode is {0}.", operatingMode));
+            //sb.AppendLine(String.Format("Audio mode is \"{0}\".", listenModeName[listenMode]));  // requires DXLog 2.3.18
 
             lbInfo.Text = sb.ToString();
         }

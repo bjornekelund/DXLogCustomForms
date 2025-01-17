@@ -12,12 +12,12 @@ namespace DXLog.net
 {
     public partial class Third : KForm
     {
-        public static String CusWinName
+        public static string CusWinName
         {
             get { return "Third"; }
         }
 
-        public static Int32 CusFormID
+        public static int CusFormID
         {
             get { return 1002; }
         }
@@ -37,10 +37,10 @@ namespace DXLog.net
         public Third(ContestData cdata)
         {
             InitializeComponent();
-            ColorSetTypes = new String[] { "Background", "Color", "Header back color", "Header color", "Footer back color", "Footer color", "Final score color", "Selection back color", "Selection color" };
+            ColorSetTypes = new string[] { "Background", "Color", "Header back color", "Header color", "Footer back color", "Footer color", "Final score color", "Selection back color", "Selection color" };
             DefaultColors = new Color[] { Color.Turquoise, Color.Black, Color.Gray, Color.Black, Color.Silver, Color.Black, Color.Blue, Color.SteelBlue, Color.White };
             _cdata = cdata;
-            this.FormLayoutChangeEvent += new FormLayoutChange(Handle_FormLayoutChangeEvent);
+            FormLayoutChangeEvent += new FormLayoutChange(Handle_FormLayoutChangeEvent);
         }
 
         private void Handle_FormLayoutChangeEvent()
@@ -58,7 +58,7 @@ namespace DXLog.net
 
             if (mainForm == null)
             {
-                mainForm = (FrmMain)(this.ParentForm == null ? this.Owner : this.ParentForm);
+                mainForm = (FrmMain)(ParentForm == null ? Owner : ParentForm);
                 if (mainForm != null)
                     mainForm.NewQSOSaved += new FrmMain.NewQSOSavedEvent(MainForm_NewQSOSaved);
             }
@@ -69,18 +69,18 @@ namespace DXLog.net
 
         private void MainForm_NewQSOSaved(DXQSO newQso)
         {
-            if (this.InvokeRequired)
+            if (InvokeRequired)
             {
                 newQsoSaved d = new newQsoSaved(MainForm_NewQSOSaved);
-                this.Invoke(d, new object[] { newQso });
+                Invoke(d, new object[] { newQso });
                 return;
             }
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("New QSO is saved.");
-            sb.AppendLine(String.Format("QSO time: {0}", newQso.QSOTime.ToString("dd.MM.yyyy HH:mm:ss")));
-            sb.AppendLine(String.Format("Call worked: {0}", newQso.Callsign));
+            sb.AppendLine(string.Format("QSO time: {0}", newQso.QSOTime.ToString("dd.MM.yyyy HH:mm:ss")));
+            sb.AppendLine(string.Format("Call worked: {0}", newQso.Callsign));
             sb.AppendLine();
-            sb.AppendLine(String.Format("Your current score is: {0} points!", _cdata.GetFinalScore().ToString("### ### ##0")));
+            sb.AppendLine(string.Format("Your current score is: {0} points!", _cdata.GetFinalScore().ToString("### ### ##0")));
             lbInfo.Text = sb.ToString();
         }
 
